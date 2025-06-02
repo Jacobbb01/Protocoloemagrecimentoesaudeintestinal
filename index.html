@@ -2,7 +2,12 @@
 <html lang="pt-br">
   <head>
 
-   <!-- Meta Pixel Code -->
+   <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -12,13 +17,61 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1599833577373695');
+fbq('init', '1218026763402141');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1599833577373695&ev=PageView&noscript=1"
-/></noscript>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1218026763402141&ev=PageView&noscript=1" />
+</noscript>
 <!-- End Meta Pixel Code -->
+
+<script>
+const API_URL = 'https://6eac3359-1fef-458a-a4dd-21b66de88966-00-3pj472hl1r5hh.picard.replit.dev/capi';
+
+function enviarEvento(eventName, customData = {}) {
+fetch(API_URL, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({
+event_name: eventName,
+event_source_url: window.location.href,
+user_data: {}, // Opcional: adicione dados hash para melhor rastreamento
+custom_data: customData
+})
+});
+}
+
+function trackPageView() {
+fbq('track', 'PageView');
+enviarEvento('PageView');
+}
+
+function trackViewContent(contentName = '') {
+fbq('track', 'ViewContent', { content_name: contentName });
+enviarEvento('ViewContent', { content_name: contentName });
+}
+
+function trackInitiateCheckout() {
+fbq('track', 'InitiateCheckout');
+enviarEvento('InitiateCheckout');
+}
+
+function trackPurchase(value = 0, currency = 'BRL') {
+fbq('track', 'Purchase', { value, currency });
+enviarEvento('Purchase', { value, currency });
+}
+
+window.onload = () => {
+trackPageView();
+};
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
     
     
     <meta charset="utf-8">
@@ -33,7 +86,7 @@ src="https://www.facebook.com/tr?id=1599833577373695&ev=PageView&noscript=1"
     <link rel="stylesheet" href="./assets/css/com.css">
 
     <!-- Título da Página -->
-    <title>Oportunidad exclusiva - Plan AGF</title>
+    <title>Oportunidad exclusiva - Protocolo ASI</title>
     
     <style type="text/css">
       body {
@@ -56,7 +109,7 @@ src="https://www.facebook.com/tr?id=1599833577373695&ev=PageView&noscript=1"
           <div class="col-lg-8 text-center">
             <!-- Progress Bar -->
             <div class="progress-widget">
-                <div class="progress-bar" role="progressbar" style="width ; height: 44px; background-color: #E00C19;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"> <p class="progress-text">Felicitaciones por adquirir el Protocolo GásFit...</p>
+                <div class="progress-bar" role="progressbar" style="width ; height: 44px; background-color: #E00C19;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"> <p class="progress-text">Felicitaciones por adquirir el Método DDPN...</p>
                   <span style="font-family:'Roboto'; font-size: 12px; font-weight: 600;"></span>
                 </div>
               </div>
